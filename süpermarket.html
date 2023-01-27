@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f0e208b9bd.js" crossorigin="anonymous"></script>
+    <title>SÜPERMARKET</title>
+    <link rel="icon" type="image/x-icon" href="favicon/WhatsApp Image 2022-04-26 at 05.08.25.jpeg">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            padding: 0;
+            margin: 0;
+        
+        }
+
+        /* Menü Başlangıç */
+        .head__nav {
+            height: 60px;
+            background-color: rgb(154, 208, 236);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-bottom: 0.10px solid whitesmoke;
+        }
+        
+        .head__nav a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .head__nav ul {
+            margin: 0;
+        }
+
+        #inner_menu, #inner_menu1 {
+            display: flex;
+            list-style: none;
+        }
+
+        #inner_menu1 {
+            margin-right: 40px;
+        }
+
+        #inner_menu > li,
+        #inner_menu1 > li {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #inner_menu > li {
+            padding: 0px 10px ;
+        }
+
+        #anasayfa {
+            background-color: rgb(227, 190, 198);
+        }
+
+        #inner_menu > li > a:hover {
+            
+            font-size: 16.5px;
+            color: lightslategrey
+        }
+
+        #inner_menu1 > li {
+            margin: 0 5px; }
+
+        #giris {
+            padding-left: 10px;
+            border-left: 5px solid whitesmoke;}
+
+        /* Menü Bitiş */
+
+
+        /* Banner Başlangıç */
+        .banner_wrapper {
+            width: 100%;
+            height: 200px;
+            background-image: linear-gradient(to right, rgba(154, 209, 236, 0),rgb(154, 208, 236)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRBgHW8zdUJIXYGI-RUbinLuxCvkBHAXGeB-fOWB5S9rX6UL3P_k7pC6WNuTOyFTHejA&usqp=CAU);
+            background-size: cover;
+            background-position: center;
+            margin-top: 60px;
+        }
+        /* banner bitiş  */
+
+        /* MİDDLE BANNER BAŞLANGIÇ */
+            
+        .middle__nav { 
+            width: 100%;
+            height: 50px;
+            background-color: rgb(154, 208, 236);
+            display: flex;
+            justify-content: space-evenly; 
+            position: sticky;
+            top: 60px;
+            border-top: 0.10px solid whitesmoke;
+        }
+
+        #middle_inner  {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style-type: none; 
+        }
+            
+        #middle_inner a {
+            text-decoration: none;
+        }
+            
+        #middle_inner li {
+            padding: 5px 35px;
+            padding-left: 50px;
+        }
+
+        #middle_inner > li > a {
+            
+            padding-left: 8px;
+            margin: 0 2px;
+            border-width: 3px;
+            color: whitesmoke;
+            font-size: 16px;
+        }
+
+        #middle_inner > li > a:hover {
+            font-size: 16.35px;
+            color: lightslategrey;
+        }
+
+        #inner_menu1 > li > a:hover {
+            font-size: 16.5px;
+            color: lightslategrey
+        }
+   
+        /* MİDDLE BANNER BİTİŞ */
+
+        /* Dış Div Container Yapısı */
+        .container {
+            margin: 1px;
+            padding: 1px;
+            width: 100%;
+        }
+
+        /*İç Div Sarıcı Wrapper Yapısı */
+        .wrapper {
+            width: 90%;
+            margin: auto;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        /* KART YAPIMI BÖLÜMÜ */
+        .cards {
+            width: 300px;
+            height: 550px;
+            padding: 10px;
+            background-color: lightgray;
+            border: 3px double gray;
+            border-radius: 20px 40px;
+            
+        }
+        
+        .card_img {
+            width: 275px;
+            height: 325px;
+        }
+        
+        .card_img > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px 40px;
+        }
+       
+        .card_rate {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+        }
+
+        .checked {
+            color: orange;
+        }
+       
+        .card_explanation {
+           margin-top: 9px;
+        }
+
+        .card_explanation > span {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+        }
+       
+       .card_explanation > p {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+            font-size: 13px;
+        }
+
+        .card_explanation > h4  {
+            font-size: 16px;
+           
+            
+            justify-content: center;
+            align-items: center;
+        }
+       
+       .price {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin-top: 15px;
+       }
+
+       .innerPrice {
+           padding-left: 10px;
+           margin: 0;
+       }
+
+       #oldPrice {
+           color: red;
+       }
+       #newPrice {
+           font-size: 20px;
+           color: black;
+           padding-left: 10px;
+       }
+
+       .card_button > button {
+           height: 30px;
+           padding-right: 10px;
+           margin: 0;
+           margin-top: 1px;
+           border-radius: 7px;
+           background-color: rgb(66, 194, 255);
+           color: rgb(239, 255, 253);
+           font-weight: 800;
+       }
+       
+       /* KART YAPIMI BÖLÜMÜ BİTİŞ */
+
+       /* inner content kısmı */
+       .innerContent {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
+
+       .baslangic {
+           margin: auto;
+           padding: auto;
+       }
+
+       /* ORTA DIV YAPIMI */
+       .orta {
+           margin: 50px 0;
+       }
+
+       .son{
+           margin: 50px 0;
+       }
+
+
+        /* Footer Başlangıç */
+
+        .clss_footer {
+            width: 100%;
+            height: 200px;
+            background-color: rgb(154, 208, 236);
+            position: relative;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;  }
+
+        .inner_footer {
+            width: 50%;
+            height: 190px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+
+        .cf_left {
+            border-right: 5px solid white;
+            text-align: center;
+            line-height: 30px;
+            letter-spacing: 1px;
+
+        }
+
+        .cf_left > ul {
+            list-style-type: none;
+        }
+
+        .cf_left > ul a {
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+        }
+
+        .cf_right > ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .cf_right > ul > li {
+            margin: 0 10px;
+        }
+
+        .cf_right > ul > li > a {
+            color: gray;
+        }
+        /* Footer Bitiş */
+
+    </style>
+</head>
+<body>
+
+    <nav class="head__nav">
+        <div class="right">
+            <ul id="inner_menu">
+                <li id="anasayfa"><a href="#">ANASAYFA</a></li>
+                <li><a href="#">HAKKIMIZDA</a></li>
+                <li><a href="#">ILETISIM</a></li>
+            </ul>
+        </div>
+        <div class="left">
+            <ul id="inner_menu1">
+                <li><a href="kayitol.html" target="_blank">KAYIT OL</a></li>
+                <li><a id="giris" href="giris.html" target="_blank">GIRIS</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="banner">
+        <div class="banner_wrapper">
+
+        </div>
+    </div>
+
+    <nav class="middle__nav">
+        <div class="midlle-left">
+            <ul id="middle_inner">
+                <li><a href="kadın.html" target="_blank">KADIN</a></li>
+                <li><a href="erkek.html" target="_blank">ERKEK</a></li>
+                <li><a href="cocuk.html" target="_blank">ÇOCUK</a></li>
+                <li><a href="elektronik.html" target="_blank">ELEKTRONİK</a></li>
+                <li><a href="spor.html" target="_blank">SPOR</a></li>
+                <li><a href="ayakkabı.html" target="_blank">AYAKKABI&ÇANTA</a></li>
+                <li><a href="kozmetik.html" target="_blank">KOZMETİK</a></li>
+                <li><a href="#">SÜPERMARKET</a></li>
+            </ul>
+        </div> 
+    </nav>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="content">
+                <div class="innerContent baslangic">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/197/222-222/110000168013495.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>NUTELLA Kakaolu Fındık Kreması 750G
+                                    Nutella</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">47,19</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/123/222-222/110000073457900.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>Finish Quantum Max Bulaşık Makinesi Deterjanı Tableti / Kapsülü 170(85x2)</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">249,90</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/212/222-222/110000189921087.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Ariel Profesyonel Formül Parlak Renkler 10 kg + Deep Cleaner Mutfak</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">144,90</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/38/222-222/10593009270834.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Familia Kağıt Havlu 12'li
+                                    Familia Kağıt Havlu</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">74,50</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ORTADAKİ DIV BASLANGICI-->
+                <div class="innerContent orta">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/47/550/10938095370290.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>Baby Turco Doğadan Külot Bez 5 Numara Junıor 72'li
+                                    Baby Turco</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">95,50</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/25/222-222/10108396503090.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>Çaykur Tiryaki 1000 gr Dökme Çay
+                                    Çaykur</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">42,99</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/150/222-222/110000106418172.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>İlbay's Fabrika Satış Mağazası-Orijinal 3'lü Mikrofiber Temizlik Bezi</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">64,40</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.dsmcdn.com/mnresize/415/622/ty400/product/media/images/20220416/20/93033822/69353435/1/1_org.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>HARPUT DİBEK Dibek Kahvesi 1000gr (yeni Ürün) 8682397015601-0</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">130,11</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BİTİŞ DİVİ -->
+                <div class="innerContent bitis">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/168/222-222/110000131102128.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>Alagözler Kavrulmuş Tuzlu Antep Fıstığı Naturel (1 Kg)
+                                    Alagözler</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">128,71</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/76/222-222/110000017891169.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>Köyceğiz Yöresel Karadut Özü 1000 G Cam Şişe
+                                    Köyceğiz Yöresel</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">110,22</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://www.servetsekerleme.com/Uploads/UrunResimleri/buyuk/taze-uretilmis-cifte-kavrulmus-fethiye-e2a7d8.jpeg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Bercekız Taze Üretilmiş Çifte Kavrulmuş Fethiye Tahini 950gr</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">105,50</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.dsmcdn.com/mnresize/415/622/ty85/product/media/images/20210402/14/b84ba262/20467752/1/1_org.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Duru Bulgur 3'lü Basmati Pirinç Paketi X3 Adet 1kg DURUPKT10</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">129,99</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="clss_footer">
+            <div class="inner_footer cf_left">
+                <ul>
+                    <li><a href="#">ANASAYFA</a></li>
+                    <li><a href="#">HAKKIMIZDA</a></li>
+                    <li><a href="#">İLETİŞİM</a></li>
+                    <li><a href="giris.html" target="_blank">GİRİŞ YAP</a></li>
+                    <li><a href="kayitol.html" target="_blank">KAYIT OL</a></li>
+                </ul>
+            </div>
+
+            <div class="inner_footer cf_right">
+                <ul>
+                    <li><a href="#"><i class="fab fa-brands fa-facebook fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-twitter fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-youtube fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-instagram fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

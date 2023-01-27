@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f0e208b9bd.js" crossorigin="anonymous"></script>
+    <title>SPOR</title>
+    <link rel="icon" type="image/x-icon" href="favicon/WhatsApp Image 2022-04-26 at 05.08.25.jpeg">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            padding: 0;
+            margin: 0;
+        
+        }
+
+        /* Menü Başlangıç */
+        .head__nav {
+            height: 60px;
+            background-color: rgb(154, 208, 236);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-bottom: 0.10px solid whitesmoke;
+        }
+        
+        .head__nav a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .head__nav ul {
+            margin: 0;
+        }
+
+        #inner_menu, #inner_menu1 {
+            display: flex;
+            list-style: none;
+        }
+
+        #inner_menu1 {
+            margin-right: 40px;
+        }
+
+        #inner_menu > li,
+        #inner_menu1 > li {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #inner_menu > li {
+            padding: 0px 10px ;
+        }
+
+        #anasayfa {
+            background-color: rgb(227, 190, 198);
+        }
+
+        #inner_menu > li > a:hover {
+            
+            font-size: 16.5px;
+            color: lightslategrey
+        }
+
+        #inner_menu1 > li {
+            margin: 0 5px; }
+
+        #giris {
+            padding-left: 10px;
+            border-left: 5px solid whitesmoke;}
+
+        /* Menü Bitiş */
+
+
+        /* Banner Başlangıç */
+        .banner_wrapper {
+            width: 100%;
+            height: 200px;
+            background-image: linear-gradient(to right, rgba(154, 209, 236, 0),rgb(154, 208, 236)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRBgHW8zdUJIXYGI-RUbinLuxCvkBHAXGeB-fOWB5S9rX6UL3P_k7pC6WNuTOyFTHejA&usqp=CAU);
+            background-size: cover;
+            background-position: center;
+            margin-top: 60px;
+        }
+        /* banner bitiş  */
+
+        /* MİDDLE BANNER BAŞLANGIÇ */
+            
+        .middle__nav { 
+            width: 100%;
+            height: 50px;
+            background-color: rgb(154, 208, 236);
+            display: flex;
+            justify-content: space-evenly; 
+            position: sticky;
+            top: 60px;
+            border-top: 0.10px solid whitesmoke;
+        }
+
+        #middle_inner  {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style-type: none; 
+        }
+            
+        #middle_inner a {
+            text-decoration: none;
+        }
+            
+        #middle_inner li {
+            padding: 5px 35px;
+            padding-left: 50px;
+        }
+
+        #middle_inner > li > a {
+            
+            padding-left: 8px;
+            margin: 0 2px;
+            border-width: 3px;
+            color: whitesmoke;
+            font-size: 16px;
+        }
+
+        #middle_inner > li > a:hover {
+            font-size: 16.35px;
+            color: lightslategrey;
+        }
+
+        #inner_menu1 > li > a:hover {
+            font-size: 16.5px;
+            color: lightslategrey
+        }
+   
+        /* MİDDLE BANNER BİTİŞ */
+
+        /* Dış Div Container Yapısı */
+        .container {
+            margin: 1px;
+            padding: 1px;
+            width: 100%;
+        }
+
+        /*İç Div Sarıcı Wrapper Yapısı */
+        .wrapper {
+            width: 90%;
+            margin: auto;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        /* KART YAPIMI BÖLÜMÜ */
+        .cards {
+            width: 300px;
+            height: 550px;
+            padding: 10px;
+            background-color: lightgray;
+            border: 3px double gray;
+            border-radius: 20px 40px;
+            
+        }
+        
+        .card_img {
+            width: 275px;
+            height: 325px;
+        }
+        
+        .card_img > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px 40px;
+        }
+       
+        .card_rate {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+        }
+
+        .checked {
+            color: orange;
+        }
+       
+        .card_explanation {
+           margin-top: 9px;
+        }
+
+        .card_explanation > span {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+        }
+       
+       .card_explanation > p {
+            margin-top: 8px;
+            display: flex;
+            justify-content: end;
+            padding-right: 8px;
+            font-size: 13px;
+        }
+
+        .card_explanation > h4  {
+            font-size: 16px;
+           
+            
+            justify-content: center;
+            align-items: center;
+        }
+       
+       .price {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin-top: 15px;
+       }
+
+       .innerPrice {
+           padding-left: 10px;
+           margin: 0;
+       }
+
+       #oldPrice {
+           color: red;
+       }
+       #newPrice {
+           font-size: 20px;
+           color: black;
+           padding-left: 10px;
+       }
+
+       .card_button > button {
+           height: 30px;
+           padding-right: 10px;
+           margin: 0;
+           margin-top: 1px;
+           border-radius: 7px;
+           background-color: rgb(66, 194, 255);
+           color: rgb(239, 255, 253);
+           font-weight: 800;
+           
+       }
+       
+       /* KART YAPIMI BÖLÜMÜ BİTİŞ */
+
+       /* inner content kısmı */
+       .innerContent {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
+
+       .baslangic {
+           margin: auto;
+           padding: auto;
+       }
+
+       /* ORTA DIV YAPIMI */
+       .orta {
+           margin: 50px 0;
+       }
+
+       .son{
+           margin: 50px 0;
+       }
+
+
+        /* Footer Başlangıç */
+
+        .clss_footer {
+            width: 100%;
+            height: 200px;
+            background-color: rgb(154, 208, 236);
+            position: relative;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;  }
+
+        .inner_footer {
+            width: 50%;
+            height: 190px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+
+        .cf_left {
+            border-right: 5px solid white;
+            text-align: center;
+            line-height: 30px;
+            letter-spacing: 1px;
+
+        }
+
+        .cf_left > ul {
+            list-style-type: none;
+        }
+
+        .cf_left > ul a {
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+        }
+
+        .cf_right > ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .cf_right > ul > li {
+            margin: 0 10px;
+        }
+
+        .cf_right > ul > li > a {
+            color: gray;
+        }
+        /* Footer Bitiş */
+
+    </style>
+</head>
+<body>
+
+    <nav class="head__nav">
+        <div class="right">
+            <ul id="inner_menu">
+                <li id="anasayfa"><a href="#">ANASAYFA</a></li>
+                <li><a href="#">HAKKIMIZDA</a></li>
+                <li><a href="#">ILETISIM</a></li>
+            </ul>
+        </div>
+        <div class="left">
+            <ul id="inner_menu1">
+                <li><a href="kayitol.html" target="_blank">KAYIT OL</a></li>
+                <li><a id="giris" href="giris.html" target="_blank">GIRIS</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="banner">
+        <div class="banner_wrapper">
+
+        </div>
+    </div>
+
+    <nav class="middle__nav">
+        <div class="midlle-left">
+            <ul id="middle_inner">
+                <li><a href="kadın.html" target="_blank">KADIN</a></li>
+                <li><a href="erkek.html" target="_blank">ERKEK</a></li>
+                <li><a href="cocuk.html" target="_blank">ÇOCUK</a></li>
+                <li><a href="elektronik.html" target="_blank">ELEKTRONİK</a></li>
+                <li><a href="#">SPOR</a></li>
+                <li><a href="ayakkabı.html" target="_blank">AYAKKABI&ÇANTA</a></li>
+                <li><a href="kozmetik.html" target="_blank">KOZMETİK</a></li>
+                <li><a href="süpermarket.html" target="_blank">SÜPERMARKET</a></li>
+            </ul>
+        </div> 
+    </nav>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="content">
+                <div class="innerContent baslangic">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://n11scdn.akamaized.net/a1/640/spor-outdoor/gunluk-spor-ayakkabi/adidas-breaknet-erkek-sneaker-fx8709__1480500396569671.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>adidas Breaknet Beyaz Erkek Sneaker Ayakkabı FX8707 adidas</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">649,00</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://floimages.mncdn.com/media/catalog/product/21-09/14/100548073_1-1631596538.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>Nike Nk Acdmy Team Bkpk - Sp21 Dc2647-010 DC2647-010</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">374,00</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/74/222-222/110000015934054.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Fit And Smart Fs-10 Dikey Manyetik Kondisyon Bisikleti Fit And Smart</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">1,994</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/56/222-222/11255812718642.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Aydın Sport 35 kg Dambıl Seti (Dumbell) Ağırlık Seti Aydın Sport</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">224,66</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ORTADAKİ DIV BASLANGICI-->
+                <div class="innerContent orta">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://laco.akinoncdn.com/products/2020/08/04/132372/93dfd10b-8339-48b3-8082-377b1ff373e4_size2000x2000_cropCenter.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>Lacoste Partner Piste 01201 Sma Erkek Siyah - Gri Sneaker </h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">1,399 TL</span></p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.cimri.io/image/1000x1000/adidas-fh7359-super-lig-pro-lisanli-resmi-mac-topu_366504338.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>adidas Uniforia Pro Türkiye Süper Lig Resmi Maç Topu No - 5 FH73594</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">2,200 TL</span></p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/141/375/110000094798429.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Puma Fenerbahçe Forma 2021-2022 Yeni Sezon Puma</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">120,00</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/51/550/11059068010546.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Spalding TF-150 Basketbol Topu Perform No:7 Fiba Logo (83-572Z)</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">260,00</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BİTİŞ DİVİ -->
+                <div class="innerContent bitis">
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.dsmcdn.com/ty209/product/media/images/20211022/20/154609111/271864956/1/1_org_zoom.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">19</span>)</p>
+                                <h4>Kappa Fermuarlı Eşofman Takımı 1-3038KJ0-AHM</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">240,60</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.dsmcdn.com//ty112/product/media/images/20210508/0/86784501/17819940/1/1_org.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">27</span>)</p>
+                                <h4>Kappa Klr1161 Honda Crf1000L Africa Twin (18) - Adventure Sports</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">4,365</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KART GRUPLARI -->
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://cdn.dsmcdn.com//ty372/product/media/images/20220326/15/76337692/426524350/1/1_org.jpg" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Sway Çift Amortisörlü 1000w 10 Inç Elektrikli Scooter HDF-YBF7</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">13,570</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards"> 
+                        <div class="card_img">
+                            <img src="https://productimages.hepsiburada.net/s/93/222-222/110000036249876.jpg/format:webp" alt="">
+                        </div>
+                        <div class="card_content">
+                            <div class="card_rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                            <div class="card_explanation">
+                                <span class="fa fa-comment-dots"></span>
+                                <p>Yorumlar (<span id="comment_count">34</span>)</p>
+                                <h4>Soultech BİKE-002 Elektrikli Katlanır Bisiklet Soultech</h4>
+                            </div>
+                            <div class="price">
+                                <div class="innerPrice">
+                                    <p style="display: flex; justify-content: center;">Fiyat:<span id="newPrice">9,144</span>TL</p>
+                                </div>
+                                <div class="card_button">
+                                    <button id="add_prod" type="button"><span style="margin-right: 5px;" class="fa fa-cart-plus"></span>Sepete Ekle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="clss_footer">
+            <div class="inner_footer cf_left">
+                <ul>
+                    <li><a href="#">ANASAYFA</a></li>
+                    <li><a href="#">HAKKIMIZDA</a></li>
+                    <li><a href="#">İLETİŞİM</a></li>
+                    <li><a href="giris.html" target="_blank">GİRİŞ YAP</a></li>
+                    <li><a href="kayitol.html" target="_blank">KAYIT OL</a></li>
+            </div>
+
+            <div class="inner_footer cf_right">
+                <ul>
+                    <li><a href="#"><i class="fab fa-brands fa-facebook fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-twitter fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-youtube fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fab fa-brands fa-instagram fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
